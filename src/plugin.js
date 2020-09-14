@@ -223,9 +223,22 @@ const onPlayerReady = (player, emeError) => {
 
       // TODO it's possible that the video state must be cleared if reusing the same video
       // element between sources
+
+      // throttle webkitneedkey request
+
+      if (player.tech_.webkitneedkeyInProgress) {
+        return;
+      }
+
+      player.tech_.webkitneedkeyInProgress = true;
+
       setupSessions(player);
       handleWebKitNeedKeyEvent(event, getOptions(player), player.tech_)
         .catch(emeError);
+
+      setTimeout(() => {
+        player.tech_.el.webkitneedkeyInProgress = false;
+      }, 1000);
     });
 
   } else if (window.MediaKeys) {
