@@ -1,9 +1,9 @@
 {
   "name": "bh-videojs-contrib-eme",
-  "version": "3.7.1",
+  "version": "3.7.3",
   "description": "Supports Encrypted Media Extensions for playback of encrypted content in Video.js",
-  "main": "dist/videojs-contrib-eme.cjs.js",
-  "module": "dist/videojs-contrib-eme.es.js",
+  "main": "dist/bh-videojs-contrib-eme.cjs.js",
+  "module": "dist/bh-videojs-contrib-eme.es.js",
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npm-run-all -p build:*",
@@ -24,7 +24,7 @@
     "version": "is-prerelease || npm run update-changelog && git add CHANGELOG.md",
     "watch": "npm-run-all -p watch:*",
     "watch:js": "npm run build:js -- -w",
-    "prepublishOnly": "npm run build && vjsverify"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "videojs",

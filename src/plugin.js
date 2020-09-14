@@ -237,7 +237,7 @@ const onPlayerReady = (player, emeError) => {
         .catch(emeError);
 
       setTimeout(() => {
-        player.tech_.el.webkitneedkeyInProgress = false;
+        player.tech_.webkitneedkeyInProgress = false;
       }, 1000);
     });
 
